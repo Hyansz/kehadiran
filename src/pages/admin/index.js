@@ -33,40 +33,51 @@ export default function Admin() {
     }
 
     return(
-        <div style={{ fontFamily:"monospace" }}>
-            <h1>Portal Admin</h1>
-            {showAllData === null && <h1>Data Kosong</h1>}
+        <div className="w-11/12 m-auto my-10 border-2 border-blue-500 p-5 rounded-lg shadow-2xl shadow-blue-200">
+            <h1 className="text-center text-xl font-semibold">Portal Admin</h1>
             {showAllData === undefined && <h1>Loading....</h1>}
+            {showAllData && showAllData.length === 0 && <h1 className="text-center m-7">Data Kosong</h1>}
             {showAllData && showAllData.map((data,index) => {
                 return (
-                    <div key={index}>
-                        {data.id}
-                        {".  "}
-                        {data.id_karyawan}
-                        {" "}
-                        {data.jam_datang}
-                        {" "}
-                        {data.jam_pulang}
-                        {" - "}
-                        {data.hari}
-                        {"/"}
-                        {data.bulan}
-                        {"/"}
-                        {data.tahun}
-                        {" "}
-                        <button onClick={() => {
-                            router.push(`/detail/${data.id}`)
-                        }}>Detail</button>
-                        {" "}
-                        <button onClick={() => {
-                            router.push(`/edit/${data.id}`)
-                        }}>Edit</button>
-                        {" "}
-                        <button onClick={() => {
-                            if(confirm("Yakin untuk dihapus ?")) {
-                                handleDelete(data.id)
-                            }
-                        }}>Delete</button>
+                    <div key={index} className="flex justify-between my-2 items-center">
+                        <div>
+                            {data.id}
+                            {".  "}
+                            {data.id_karyawan}
+                            {" "}
+                            {data.jam_datang}
+                            {" "}
+                            {data.jam_pulang}
+                            {" - "}
+                            {data.hari}
+                            {"/"}
+                            {data.bulan}
+                            {"/"}
+                            {data.tahun}
+                            {" "}
+                        </div>
+                        <div className="flex gap-2">
+                            <button 
+                                className="border-blue-500 border-2 bg-transparent text-blue-500 py-1 px-4 font-semibold rounded-full"
+                                onClick={() => {
+                                    router.push(`/detail/${data.id}`)
+                                }}>Detail</button>
+                            {" "}
+                            <button 
+                                className="border-orange-500 border-2 bg-transparent text-orange-500 py-1 px-4 font-semibold rounded-full"
+                                onClick={() => {
+                                    router.push(`/edit/${data.id}`)
+                                }}>Edit</button>
+                            {" "}
+                            <button 
+                                className="border-red-500 border-2 bg-transparent text-red-500 py-1 px-4 font-semibold rounded-full"
+                                onClick={() => {
+                                    if(confirm("Yakin untuk dihapus ?")) {
+                                        handleDelete(data.id)
+                                    }
+                                }}>Delete
+                            </button>
+                        </div>
                     </div>
                 )
             })}

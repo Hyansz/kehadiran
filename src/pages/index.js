@@ -28,7 +28,7 @@ export default function Home() {
     .then((res) =>  res.json())
     .then((data) => {
       console.log(data.data)
-      alert("Sampai Jumpa")
+      alert("Terimakasih atas partisipasi Anda")
       router.reload()
     })
     .catch((err) => {
@@ -37,13 +37,15 @@ export default function Home() {
   }
 
   return (
-    <div style={{ fontFamily:"monospace" }}>
-      <h1>Absensi Karyawan</h1>
-      <button onClick={() => {
-        router.push(`/add-data`)
-      }}>Tambah Absensi</button>
+    <div className="w-11/12 m-auto my-10 border-2 border-blue-500 p-5 rounded-lg shadow-2xl shadow-blue-200">
+      <h1 className="text-center text-xl font-semibold">Kehadiran Karyawan</h1>
+      <button 
+        className="bg-blue-500 py-2 px-4 font-semibold text-white rounded-full shadow-xl shadow-blue-200 my-4"
+        onClick={() => {
+          router.push(`/add-data`)
+        }}>Tambah Absensi</button>
       <div>
-        {showAllData === null && <h1>Data Kosong</h1>}
+        {showAllData && showAllData.length === 0 && <h1 className="my-7">Data Kosong</h1>}
         {showAllData === undefined && <h1>Loading....</h1>}
         {showAllData && showAllData.map((data,index) => {
           return (
@@ -57,15 +59,16 @@ export default function Home() {
               {data.jam_pulang}
               {" "}
               {!data.jam_pulang && (
-                  <button onClick={() => {
-                    handleUpdate(data.id)
-                  }}>Pulang</button>
+                  <button 
+                    className="border-blue-500 border-2 bg-transparent text-blue-500 py-1 px-4 font-semibold rounded-full"
+                    onClick={() => {
+                      handleUpdate(data.id)
+                    }}>Pulang</button>
               )}
             </div>
           )
         })}
       </div>
-     
     </div>
   );
 }

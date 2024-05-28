@@ -7,7 +7,7 @@ async function updateData(req,res) {
             return res.status(405).json({message:"Method tidak diperbolehkan"})
         }
 
-        const {id_karyawan,jam_datang,jam_pulang,hari,bulan,tahun} = req.body
+        const {id_karyawan, jam_datang, jam_pulang, hari, bulan, tahun} = req.body
         const {id} = await req.query
 
         if(!id) {
