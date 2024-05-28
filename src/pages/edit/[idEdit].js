@@ -73,20 +73,20 @@ export default function EditPage() {
             {dataDetail && 
                 (
                     <form onSubmit={handleSumbit} className="mt-5">
-                        <div className="flex items-center gap-2">
-                            <div className="w-1/4 flex flex-col border-2 border-black rounded p-2">
+                        <div className="flex flex-col lg:flex-row items-center gap-2">
+                            <div className="w-full lg:w-1/4 flex flex-col border-2 border-black rounded p-2">
                                 <label>Nama: </label>
                                 <input className="border-2 border-black rounded px-4 w-full" name="id_karyawan" required defaultValue={dataDetail.id_karyawan}></input>
                             </div>
-                            <div className="w-1/4 flex flex-col border-2 border-black rounded p-2">
+                            <div className="w-full lg:w-1/4 flex flex-col border-2 border-black rounded p-2">
                                 <label>Jam datang: </label>
                                 <input className="border-2 border-black rounded px-4" name="jam_datang" type="text" defaultValue={dataDetail.jam_datang}/>
                             </div>
-                            <div className="w-1/4 flex flex-col border-2 border-black rounded p-2">
+                            <div className="w-full lg:w-1/4 flex flex-col border-2 border-black rounded p-2">
                                 <label>Jam pulang: </label>
                                 <input className="border-2 border-black rounded px-4" name="jam_pulang" type="text" defaultValue={dataDetail.jam_pulang}/>
                             </div>
-                            <div className="w-1/4 flex flex-col border-2 border-black rounded p-2">
+                            <div className="w-full lg:w-1/4 flex flex-col border-2 border-black rounded p-2">
                                 <label>Tanggal: </label>
                                 <div className="flex">
                                     <input className="border-2 border-black rounded px-4 w-1/3" name="hari" required placeholder="Hari" defaultValue={dataDetail.hari}></input>

@@ -39,7 +39,7 @@ export default function Admin() {
             {showAllData && showAllData.length === 0 && <h1 className="text-center m-7">Data Kosong</h1>}
             {showAllData && showAllData.map((data,index) => {
                 return (
-                    <div key={index} className="flex justify-between my-2 items-center">
+                    <div key={index} className="flex lg:flex-row flex-col justify-between my-2 lg:items-center">
                         <div>
                             {data.id}
                             {".  "}

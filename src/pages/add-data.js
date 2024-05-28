@@ -36,10 +36,10 @@ export default function Home() {
   };
 
   return (
-    <div className="w-5/12 m-auto my-10 border-2 border-blue-500 p-5 rounded-lg shadow-2xl shadow-blue-200">
+    <div className="w-11/12 lg:w-5/12 m-auto my-10 border-2 border-blue-500 p-5 rounded-lg shadow-2xl shadow-blue-200">
       <h1 className="text-center text-xl font-semibold my-2 mb-3">Kehadiran</h1>
         <form onSubmit={handleAdd}>
-          <div className="flex items-center justify-between w-11/12 m-auto">
+          <div className="lg:flex lg:flex-row items-center justify-between w-11/12 m-auto">
             <div style={{ padding:"10px 0" }} className="flex items-center gap-2">
               <label style={{ padding:"0 5px" }}>Nama:</label>
               <input

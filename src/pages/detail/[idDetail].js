@@ -19,13 +19,13 @@ export default function DetailPage() {
     },[idDetail])
 
     return (
-        <div className="w-3/12 m-auto my-10 border-2 border-blue-500 p-5 rounded-lg text-center pb-9 shadow-2xl shadow-blue-200">
-            {dataDetail !== undefined && <p className="text-center text-xl font-semibold mt-3 mb-10">Detail: {idDetail}</p>}
+        <div className="w-11/12 lg:w-3/12 m-auto my-10 border-2 border-blue-500 p-5 rounded-lg text-center pb-9 shadow-2xl shadow-blue-200">
+            {dataDetail !== undefined && <p className="text-center text-xl font-semibold mt-3 mb-5 lg:mb-10">Detail: {idDetail}</p>}
             {dataDetail === undefined && <p className="mb-6">Loading....</p>}
             {dataDetail && dataDetail.length === 0 && <h1 className="text-center m-7">Data Kosong</h1>}
             {dataDetail && dataDetail.map((data,index) => {
                 return (
-                    <div key={index} className="mb-10 leading-8 text-justify">
+                    <div key={index} className="mb-7 lg:mb-10 leading-8 text-justify">
                         <span>Nama: {data.id_karyawan}</span>
                         {" "}
                         <br/>
